@@ -9,27 +9,27 @@ public class ComparisonTests {
 
     @Test
     public void testEquality() {
-        assertEquals(rational(1, 2), rational(1, 2));
+        assertEquals("Equality comparison failed for equal values", rational(1, 2), rational(1, 2));
     }
 
     @Test
     public void testInequality() {
-        assertNotEquals(rational(1, 2), rational(1, 3));
+        assertNotEquals("Inequality comparison failed for different values", rational(1, 2), rational(1, 3));
     }
 
     @Test
     public void testLess() {
-        assertTrue(rational(1, 3).less(rational(1, 2)));
+        assertTrue("Less-than comparison failed for smaller value", rational(1, 3).less(rational(1, 2)));
     }
 
     @Test
     public void testLessOrEqual() {
-        assertTrue(rational(1, 2).lessOrEqual(rational(1, 2)));
+        assertTrue("Less-or-equal comparison failed for equal values", rational(1, 2).lessOrEqual(rational(1, 2)));
     }
 
     @Test
     public void testEqualsWithNull() {
         Rational rational = rational(1, 2);
-        assertNotEquals(null, rational);
+        assertNotEquals("Equality check failed when compared with null", null, rational);
     }
 }

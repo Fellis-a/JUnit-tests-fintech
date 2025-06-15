@@ -22,29 +22,29 @@ public class ArithmeticTests {
     @Test
     public void testAddition() {
         Rational result = half().plus(third());
-        assertEquals(5, result.getNumerator());
-        assertEquals(6, result.getDenominator());
+        assertEquals("Addition returns wrong numerator", 5, result.getNumerator());
+        assertEquals("Addition returns wrong denominator", 6, result.getDenominator());
     }
 
     @Test
     public void testSubtraction() {
         Rational result = half().minus(third());
-        assertEquals(1, result.getNumerator());
-        assertEquals(6, result.getDenominator());
+        assertEquals("Subtraction returns wrong numerator", 1, result.getNumerator());
+        assertEquals("Subtraction returns wrong denominator", 6, result.getDenominator());
     }
 
     @Test
     public void testMultiplication() {
         Rational result = half().multiply(twoThirds());
-        assertEquals(1, result.getNumerator());
-        assertEquals(3, result.getDenominator());
+        assertEquals("Multiplication returns wrong numerator", 1, result.getNumerator());
+        assertEquals("Multiplication returns wrong denominator", 3, result.getDenominator());
     }
 
     @Test
     public void testDivision() {
         Rational result = half().divide(twoThirds());
-        assertEquals(3, result.getNumerator());
-        assertEquals(4, result.getDenominator());
+        assertEquals("Division returns wrong numerator", 3, result.getNumerator());
+        assertEquals("Division returns wrong denominator", 4, result.getDenominator());
     }
 
     @Test(expected = ArithmeticException.class)
@@ -58,7 +58,7 @@ public class ArithmeticTests {
         Rational firstNumber = rational(-1, 2);
         Rational secondNumber = third();
         Rational result = firstNumber.plus(secondNumber);
-        assertEquals(-1, result.getNumerator());
-        assertEquals(6, result.getDenominator());
+        assertEquals("Addition with negative number returns wrong numerator", -1, result.getNumerator());
+        assertEquals("Addition with negative number returns wrong denominator", 6, result.getDenominator());
     }
 }

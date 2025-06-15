@@ -9,21 +9,21 @@ public class ToStringTests {
 
     @Test
     public void testToStringPositive() {
-        assertEquals("3/4", rational(3, 4).toString());
+        assertEquals("toString returns wrong result for positive fraction", "3/4", rational(3, 4).toString());
     }
 
     @Test
     public void testToStringNegative() {
-        assertEquals("-3/4", rational(-3, 4).toString());
+        assertEquals("toString returns wrong result for negative fraction", "-3/4", rational(-3, 4).toString());
     }
 
     @Test
     public void testToStringZero() {
-        assertEquals("0/1", rational(0, 5).toString());
+        assertEquals("toString returns wrong result for zero numerator", "0/1", rational(0, 5).toString());
     }
 
     @Test
     public void testToStringReduction() {
-        assertEquals("1/2", rational(5, 10).toString());
+        assertEquals("toString returns wrong result after reduction", "1/2", rational(5, 10).toString());
     }
 }
